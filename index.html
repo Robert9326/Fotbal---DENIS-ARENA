@@ -105,5 +105,5 @@ function render(){
  document.getElementById('historyList').innerHTML=matches.length?matches.map(m=>{const p=players.find(x=>x.id===m.mvp_id);return `<div class="row"><div><b>Denis Arena</b><div class="small">${esc(m.match_date)}${p?' · MVP: '+esc(p.name):''}</div></div><strong class="count">${m.team_a_score} – ${m.team_b_score}</strong></div>`}).join(''):'<div class="empty">Nu există meciuri arhivate.</div>';
 }
 db.auth.onAuthStateChange(async()=>{await checkAdmin();});
-(async()=>{if(SUPABASE_PUBLISHABLE_KEY==='sb_publishable_lz9dL82DHHksSzuZQgH97g_sSb7ZanE'){msg('connectionStatus','Mai întâi introdu cheia publică în fișierul index.html.','error');return}await checkAdmin();await load()})();
+(async()=>{await checkAdmin();await load()})();
 </script></body></html>
